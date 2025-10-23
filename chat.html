@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>芳芳的晚自习助手</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 微信兼容样式 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            background: #F8F8F8;
+        }
+        .msg-box {
+            background: #FFF;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="msg-box">
+        <h3>📲 长按复制以下内容：</h3>
+        <div id="joke">点击按钮生成幽默文案 ↓</div>
+        <button onclick="genJoke()" style="background: #07C160; color: white;">生成趣味消息</button>
+    </div>
+
+    <script>
+        const jokes = [
+            "📢 晚自习生存指南：每做完一题，奖励自己一次眨眼！",
+            "🔍 系统检测到你已连续学习30分钟，建议执行「伸懒腰协议」",
+            "🎯 新成就解锁：用橡皮擦表演一段踢踏舞"
+        ];
+
+        function genJoke() {
+            const joke = jokes[Math.floor(Math.random() * jokes.length)];
+            document.getElementById("joke").innerHTML = `
+                ${joke}<br><br>
+                <span style="color:#888;font-size:0.8em">(长按文字复制后返回微信粘贴发送)</span>
+            `;
+        }
+    </script>
+</body>
+</html>
